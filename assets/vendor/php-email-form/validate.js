@@ -1,8 +1,3 @@
-/**
-* PHP Email Form Validation - v3.5
-* URL: https://bootstrapmade.com/php-email-form/
-* Author: BootstrapMade.com
-*/
 (function () {
   "use strict";
 
@@ -16,6 +11,8 @@
 
       let action = thisForm.getAttribute('action');
       let recaptcha = thisForm.getAttribute('data-recaptcha-site-key');
+
+      
       
       if( ! action ) {
         displayError(thisForm, 'The form action property is not set!')
@@ -35,6 +32,7 @@
               .then(token => {
                 formData.set('recaptcha-response', token);
                 php_email_form_submit(thisForm, action, formData);
+              
               })
             } catch(error) {
               displayError(thisForm, error)
@@ -44,32 +42,46 @@
           displayError(thisForm, 'The reCaptcha javascript API url is not loaded!')
         }
       } else {
+    
         php_email_form_submit(thisForm, action, formData);
+        
       }
-    });
+    },true);
   });
 
+  
+
+
+
   function php_email_form_submit(thisForm, action, formData) {
-    fetch(action, {
-      method: 'POST',
-      body: formData,
-      headers: {'X-Requested-With': 'XMLHttpRequest'}
-    })
-    .then(response => {
-      return response.text();
-    })
-    .then(data => {
-      thisForm.querySelector('.loading').classList.remove('d-block');
-      if (data.trim() == 'OK') {
-        thisForm.querySelector('.sent-message').classList.add('d-block');
-        thisForm.reset(); 
-      } else {
-        throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
-      }
-    })
-    .catch((error) => {
-      displayError(thisForm, error);
-    });
+    var x = thisForm.elements;
+  
+    let name = x["name"].value;
+    let email = x["email"].value;
+    let subject = x["subject"].value;
+    let message = x["message"].value;
+    
+    Email.send({
+      SecureToken : "0df0376c-d90f-4119-acdb-e73f5a6371a3",
+      To : 'onyxsioit@gmail.com',
+      From : "onyxsiocv@gmail.com",
+      Subject : subject,
+      Body : 'name: '+name+'\nemail : ' + email+'\nbody : '+message 
+  })
+  .then(data => {
+    thisForm.querySelector('.loading').classList.remove('d-block');
+    
+    if (data == 'OK') {
+      thisForm.querySelector('.sent-message').classList.add('d-block');
+      thisForm.reset(); 
+    } else {
+      throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
+    }
+  })
+  .catch((error) => {
+    displayError(thisForm, error);
+  });
+   
   }
 
   function displayError(thisForm, error) {
