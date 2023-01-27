@@ -37,7 +37,7 @@
   --color-links-hover: #4428c0;
 
   /* Primay colors */
-  --color-primary: #54a1fa;
+  --color-primary: hsla(199, 89%, 49%, 1);
   --color-primary-light: #1d6eca;
   --color-primary-dark: #0189a1;
 
@@ -98,7 +98,43 @@
 
   --color-black: #000000;
   --color-black-rgb: 0, 0, 0;
-  
+    /** Background colors */
+  --bg-wild-blue-yonder: hsla(216, 33%, 68%, 1);
+  --bg-carolina-blue: hsla(199, 89%, 49%, 1);
+  --bg-prussian-blue: hsla(216, 33%, 20%, 1);
+  --bg-oxford-blue: hsla(222, 44%, 13%, 1);
+  --bg-oxford-blue-2: hsla(222, 47%, 11%, 1);
+    /** Text colors */
+  --text-white: hsla(0, 0%, 100%, 1);
+  --text-alice-blue: hsla(216, 100%, 95%, 1);
+  --text-columbia-blue: hsla(199, 69%, 84%, 1);
+  --text-wild-blue-yonder: hsla(216, 33%, 68%, 1);
+  --text-carolina-blue: hsla(199, 89%, 49%, 1);
+  --text-shadow-blue: hsla(217, 24%, 59%, 1);
+  --text-slate-gray: hsla(217, 17%, 48%, 1);
+   /** Gradient colors */
+   --gradient-1: linear-gradient(90deg, #0ea5ea, #0bd1d1 51%);
+   --gradient-2: linear-gradient(90deg, #0ea5ea, #0bd1d1 51%, #0ea5ea);
+   --gradient-3: linear-gradient(0deg, #000d1a, transparent);
+ /*** BOX SHADOW*/
+   --shadow-1: 0 8px 20px 0 hsla(0, 0%, 0%, 0.05);
+   --shadow-2: 0px 3px 20px hsla(180, 90%, 43%, 0.2);
+   /** Line height */
+   --lineHeight-1: 1.3;
+   --lineHeight-2: 1.5;
+   --lineHeight-4: 1.5;
+   /*  */
+   --section-padding: 70px;
+     /** Font weight */
+  --weight-medium: 500;
+  --weight-semiBold: 600;
+  --weight-bold: 700;
+  --weight-extraBold: 800;
+  /** Border colors */
+  --border-wild-blue-yonder: hsla(216, 33%, 68%, 1);
+  --border-prussian-blue: hsla(216, 33%, 20%, 1);
+  --border-white: hsl(0, 0%, 100%);
+  --border-white-alpha-15: hsla(0, 0%, 100%, 0.15);
 }
 
 /*--------------------------------------------------------------

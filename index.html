@@ -60,13 +60,13 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto " href="index.html">Home</a></li>
-          <li><a class="nav-link scrollto" href="index.html#about">About</a></li>
-          <li><a class="nav-link scrollto" href="index.html#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="index.html#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto " href="#">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
           <!-- <li><a class="nav-link scrollto" href="index.html#team">Team</a></li> -->
           <!-- <li><a href="blog.html">Blog</a></li>                   -->
-          <li><a class="nav-link scrollto" href="index.html#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle d-none"></i>
       </nav><!-- .navbar -->
@@ -76,14 +76,16 @@
     </div>
   </header><!-- End Header -->
 
-  <section id="hero-static" class="hero-static d-flex align-items-center">
+  <section id="hero-static " class="hero-static d-flex align-items-center">
     <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative" data-aos="zoom-out">
       <h2>Welcome to <span>My space</span></h2>
       <p>I'm a talented Mobile app developer who helps take your business to the next level.</p>
       <div class="d-flex">
-        <a href="#contact" class="btn-get-started scrollto">Get Started</a>
+        <a href="" class="btn-get-started scrollto">Get the Resume</a>
+        <!-- <a href="" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-cloud-download"></i><span>Resume</span></a> -->
       </div>
     </div>
+    
   </section>
 
   <main id="main">
@@ -95,7 +97,7 @@
         <div class="row gy-4">
 
           <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out">
-            <div class="service-item position-relative">
+            <div class="service-item position-relative card">
               <div class="icon"><i class="bi bi-android2 icon"></i></div>
               <h4><a href="" class="stretched-link">Android Applications</a></h4>
               <p>Let's make a high-performance android mobile application and grow your business.</p>
@@ -103,7 +105,7 @@
           </div><!-- End Service Item -->
 
           <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="200">
-            <div class="service-item position-relative">
+            <div class="service-item position-relative card">
               <div class="icon"><i class="bi bi-apple icon"></i></div>
               <h4><a href="" class="stretched-link">iOS Applications</a></h4>
               <p>Let's build an iOS mobile application and take your business to a wider range.</p>
@@ -111,7 +113,7 @@
           </div><!-- End Service Item -->
 
           <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="400">
-            <div class="service-item position-relative">
+            <div class="service-item position-relative card">
               <div class="icon"><i class="bi bi-globe icon"></i></div>
               <h4><a href="" class="stretched-link">Web Applications</a></h4>
               <p>We build a web application to run your business efficiently and easily.</p>
@@ -119,7 +121,7 @@
           </div><!-- End Service Item -->
 
           <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="600">
-            <div class="service-item position-relative">
+            <div class="service-item position-relative card">
               <div class="icon"><i class="bi bi-pc-display icon"></i></div>
               <h4><a href="" class="stretched-link">Desktop Applications</a></h4>
               <p>Let's build a desktop application to run your business safely, efficiently and easily.</p>
@@ -131,101 +133,6 @@
       </div>
     </section><!-- End Featured Services Section -->
 
-    <!-- ======= About Section ======= -->
-    <!-- <section id="about" class="about section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>About</h2>
-          <p>My name is Sudesh Bandara. I have been working as a freelance mobile app developer for 
-            the past three years and have collaborated with several startups. Presently I live in Sri 
-            Lanka and have provided services all over the world.</p>
-        </div>
-
-        <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="col-lg-5">
-            <div class="about-img">
-              <img src="assets/img/about.png" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="col-lg-7">
-            <h3 class="pt-0 pt-lg-5">Onyxsio is a team that focuses on your business or market space and produces software for your development.</h3>
-
-            <!-- Tabs -->
-            <!-- <ul class="nav nav-pills mb-3">
-              <li><a class="nav-link active" data-bs-toggle="pill" href="#tab1">About</a></li>
-              <li><a class="nav-link" data-bs-toggle="pill" href="#tab2">Vision</a></li>
-              <li><a class="nav-link" data-bs-toggle="pill" href="#tab3">Mission</a></li>
-            </ul> -->
-            <!-- End Tabs -->
-
-            <!-- Tab Content -->
-            <!-- <div class="tab-content">
-
-              <div class="tab-pane fade show active" id="tab1">
-
-                <p class="fst-italic">Headquartered in Kandy, Sri Lanka. ONYXSIO private limited company is one of the global leader in agile product development and technology innovation.</p>
-
-                <div class="d-flex align-items-center mt-4">
-                  <i class="bi bi-check2"></i>
-                  <h4>How can we trust you?</h4>
-                </div>
-                <p>We are a company registered in Sri Lanka under the Companies Act (No. 7 of 2007). That's why we have rules.</p>
-
-                <div class="d-flex align-items-center mt-4">
-                  <i class="bi bi-check2"></i>
-                  <h4>The secret of our success.</h4>
-                </div>
-                <p>We pride ourselves on our continued excellence in technological innovation, employee satisfaction and business strength.</p>
-
-                <div class="d-flex align-items-center mt-4">
-                  <i class="bi bi-check2"></i>
-                  <h4>Why should you choose us?</h4>
-                </div>
-                <p>We help product vendors create digital solutions that target both customers' needs and satisfaction to solve real user problems. We have experience in various projects for this. So we offer you an amazing digital product that best suits you according to your needs.</p>
-
-              </div> -->
-              <!-- End Tab 1 Content -->
-
-              <!-- <div class="tab-pane fade show" id="tab2">
-
-                <p class="fst-italic">We have a very strong vision, so we think about customer satisfaction and how to uplift them.</p>
-
-                <div class="d-flex align-items-center mt-4">
-                  <i class="bi bi-check2"></i>
-                  <h4>Vision</h4>
-                </div>
-                <p>Strengthening the current position, expanding the market and providing direct IT solutions to the customers, our service satisfies our customers and implements with more effective software solutions, strategies</p>
-
-                
-                
-              </div> -->
-              <!-- End Tab 2 Content -->
-
-              <!-- <div class="tab-pane fade show" id="tab3">
-
-                <p class="fst-italic">We care about both customer satisfaction and the satisfaction of our employees. So it is our responsibility to provide the best technology solution to the customers by completing these two.</p>
-
-                <div class="d-flex align-items-center mt-4">
-                  <i class="bi bi-check2"></i>
-                  <h4>Mission</h4>
-                </div>
-                <p>Clients' expectations act as our challenges and deliver the best software solutions.</p>
-              </div> -->
-              <!-- End Tab 3 Content -->
-
-            <!-- </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>  -->
-
-    <!-- End About Section -->
 <!-- ======= About Section ======= -->
 <section id="about" class="about">
   <div class="container" data-aos="fade-up">
@@ -233,10 +140,10 @@
     <div class="section-title">
       <div class="section-header">
         <h2>About</h2>
-      </div>
       <p>My name is Sudesh Nishshanka Bandara. I have been working as a freelance mobile app developer for 
         the past three years and have collaborated with several startups. Presently I live in Sri 
         Lanka and have provided services all over the world.</p>
+      </div>
     </div>
 
     <div class="row">
@@ -293,12 +200,9 @@
         <div class="row gy-5">
 
           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="service-item">
-              <div class="img">
-                <!-- services-1.jpg -->
-                <!-- <img src="assets/img/services-1.jpg" class="img-fluid" alt=""> -->
-              </div>
-              <div class="details position-relative">
+            <div class="service-item ">
+             
+              <div class="details position-relative card">
                 <div class="icon">
                   <i class="bi bi-phone"></i>
                 </div>
@@ -311,11 +215,9 @@
           </div><!-- End Service Item -->
 
           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-            <div class="service-item">
-              <div class="img">
-                <!-- <img src="assets/img/services-2.jpg" class="img-fluid" alt=""> -->
-              </div>
-              <div class="details position-relative">
+            <div class="service-item ">
+             
+              <div class="details position-relative card">
                 <div class="icon">
                   <i class="bi bi-window"></i>
                 </div>
@@ -329,10 +231,7 @@
 
           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item">
-              <div class="img">
-                <!-- <img src="assets/img/services-3.jpg" class="img-fluid" alt=""> -->
-              </div>
-              <div class="details position-relative">
+              <div class="details position-relative card">
                 <div class="icon">
                   <i class="bi bi-pc-display"></i>
                 </div>
@@ -343,29 +242,6 @@
               </div>
             </div>
           </div><!-- End Service Item -->
-
-          
-
-          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="600">
-            <div class="service-item">
-              <div class="img">
-                <!-- <img src="assets/img/services-5.jpg" class="img-fluid" alt=""> -->
-              </div>
-              <div class="details position-relative">
-                <div class="icon">
-                  <i class="bi bi-graph-up-arrow"></i>
-                </div>
-                <a href="" class="stretched-link">
-                  <h3>UI/UX</h3>
-                </a>
-                <p>I design UI/UX for mobile apps and websites. So I can make a beautiful design for you and also attract users.</p>
-                <a href="" class="stretched-link"></a>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-        
-
         </div>
 
       </div>
@@ -383,7 +259,7 @@
 
       </div>
 
-      <div class="container-fluid" data-aos="fade-up" data-aos-delay="200">
+      <div class="container" data-aos="fade-up" data-aos-delay="200">
 
         <div class="portfolio-isotope" data-portfolio-filter=".filter-app" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
 
@@ -402,7 +278,7 @@
               <div class="portfolio-info">
                 <h4>Poet App</h4>
                 <a href="assets/img/portfolio/1.png" title="Poet App" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div>
             <!-- portfolio-details.html -->
@@ -415,26 +291,27 @@
                 <a href="assets/img/portfolio/2.png" title="Elder Exercises App" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
-            </div><!-- End Portfolio Item -->
+            </div>
+            <!-- End Portfolio Item -->
 
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-system">
               <img src="assets/img/portfolio/webapp-1.png" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>CRM System</h4>
+                <h4>Onyxsio Grid View</h4>
                 <a href="assets/img/portfolio/web-1.png" title="Customer Relationship Management system" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="https://pub.dev/packages/onyxsio_grid_view" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
-            </div><!-- End Portfolio Item -->
-
+            </div>
+            <!-- End Portfolio Item -->
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
               <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Sudoku Game App</h4>
                 <a href="assets/img/portfolio/3.png" title="Sudoku Game App" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="https://play.google.com/store/apps/details?id=com.allstriking.sudoku" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
-            </div><!-- End Portfolio Item -->
-
+            </div>
+            <!-- End Portfolio Item -->
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
               <img src="assets/img/portfolio/app-4.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -442,8 +319,25 @@
                 <a href="assets/img/portfolio/app-4.jpg" title="Online Shopping App" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
+            </div>
+            <!-- End Portfolio Item -->
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
+              <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>රසවිඳ - Food Recipe</h4>
+                <a href="assets/img/portfolio/3.png" title="Sudoku Game App" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="https://play.google.com/store/apps/details?id=com.allstriking.recipe_app" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+            <!-- End Portfolio Item -->
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
+              <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Water Reminder</h4>
+                <a href="assets/img/portfolio/3.png" title="Sudoku Game App" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="https://play.google.com/store/apps/details?id=com.allstriking.water_app" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
             </div><!-- End Portfolio Item -->
-
           </div><!-- End Portfolio Container -->
 
         </div>
@@ -519,13 +413,6 @@
           <h2>Contact</h2>
           <p>I love engaging with new ideas from clients, I’d love to hear from you.</p>
         </div>
-
-      
-
-      <!-- <div class="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
-      </div> -->
-      <!-- End Google Maps -->
 
       <div class="row" data-aos="fade-up" data-aos-delay="100">
         <div class="col-lg-6">
