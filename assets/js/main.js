@@ -283,7 +283,7 @@ const initPortfolioSystem = () => {
 
   const createPortfolioItem = (item) => {
     const colDiv = document.createElement('div');
-    colDiv.className = `col-xl-2 col-lg-3 col-md-5 col-sm-6 portfolio-item ${item.category}`;
+    colDiv.className = `col-xl-2 col-lg-3 col-md-5 col-sm-6 portfolio-item ${item.filter}`;
     colDiv.innerHTML = `
     
       <div class="portfolio-item-inner">
