@@ -144,7 +144,7 @@ section {
   padding: 15px 0;
   background-color: var(--bg-oxford-blue);
   min-height: 40px;
-  margin-top: 76px;
+  margin-top: 70px;
 }
 
 .breadcrumbs h2 {
@@ -246,6 +246,9 @@ section {
   transition: all 0.5s;
   padding: 10px 100px 10px 100px;
   z-index: 997;
+  background-color: var(--bg-oxford-blue-2);
+
+  /* height: 70px; */
 }
 
 .header.sticked {
@@ -1842,13 +1845,17 @@ section {
 
 .portfolio .portfolio-item {
   position: relative;
-  border: 1px solid var(--border-prussian-blue);
+  /* border: 1px solid var(--border-prussian-blue); */
   overflow: hidden;
   z-index: 1;
+  max-height: 100px;
+  max-width: 100px;
+  margin-bottom: 10px;
 }
 
 .portfolio .portfolio-item img {
   transition: all 0.3s;
+  
 }
 
 .portfolio .portfolio-item:before {
@@ -1912,6 +1919,24 @@ section {
   opacity: 1;
   inset: auto 10px 0 10px;
 }
+
+/* Ensure portfolio content row is visible by default */
+#portfolio-content {
+  display: block !important; /* Override any inline styles */
+}
+
+/* Loading state */
+#portfolio-content[data-loading="true"] {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+#portfolio-content[data-loading="false"] {
+  opacity: 1;
+  visibility: visible;
+}
+
 
 /*--------------------------------------------------------------
 # Team Section

@@ -30,13 +30,7 @@
 
   <!-- Variables CSS Files. Uncomment your preferred color scheme -->
   <link href="assets/css/variables.css" rel="stylesheet">
-  <!-- <link href="assets/css/variables-blue.css" rel="stylesheet"> -->
-  <!-- <link href="assets/css/variables-green.css" rel="stylesheet"> -->
-  <!-- <link href="assets/css/variables-orange.css" rel="stylesheet"> -->
-  <!-- <link href="assets/css/variables-purple.css" rel="stylesheet"> -->
-  <!-- <link href="assets/css/variables-red.css" rel="stylesheet"> -->
-  <!-- <link href="assets/css/variables-pink.css" rel="stylesheet"> -->
-
+ 
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
@@ -44,6 +38,10 @@
   * Author: onyxsio.com
   * License: https://onyxsio.com/license/
   ======================================================== -->
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js"></script>
+
 </head>
 
 <body>
@@ -53,26 +51,20 @@
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1>Sudesh Bandara<span>.</span></h1>
       </a>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto " href="#">Home</a></li>
+          <li><a class="nav-link scrollto" href="#featured-services">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
-          <!-- <li><a class="nav-link scrollto" href="index.html#team">Team</a></li> -->
-          <!-- <li><a href="blog.html">Blog</a></li>                   -->
+          <!-- <li><a class="nav-link scrollto" href="blog.html">Blog</a></li>                   -->
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle d-none"></i>
       </nav><!-- .navbar -->
-
-      <!-- <a class="btn-getstarted scrollto" href="index-4.html#about">Get Started</a> -->
-
     </div>
   </header><!-- End Header -->
 
@@ -138,11 +130,10 @@
   <div class="container" data-aos="fade-up">
 
     <div class="section-title">
-      <div class="section-header">
+      <div class="section-header ">
         <h2>About</h2>
-      <p>My name is Sudesh Nishshanka Bandara. I have been working as a freelance mobile app developer for 
-        the past three years and have collaborated with several startups. Presently I live in Sri 
-        Lanka and have provided services all over the world.</p>
+        <!-- <div class="text-start"> -->
+        <p>Hi, I’m Sudesh Nishshanka Bandara, a passionate freelance mobile app developer with over five years of experience turning ideas into powerful, user-friendly apps. Based in Sri Lanka, I’ve collaborated with startups worldwide, delivering high-quality solutions and building meaningful digital experiences.</p>
       </div>
     </div>
 
@@ -151,7 +142,7 @@
         <img src="assets/img/profile-img.png" class="img-fluid" alt="">
       </div>
       <div class="col-lg-8 pt-4 pt-lg-0 content">
-        <h3>Mobile App Developer &amp; Web Developer.</h3>
+        <h3>Mobile Application &amp; Web Developer.</h3>
         <p class="fst-italic">
           I am currently working as a mobile app developer and using Flutter to build android and ios apps.
           I also work as a web developer.
@@ -161,7 +152,7 @@
             <ul>
               <!-- <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>23 December 1996</span></li> -->
               <!-- <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.sudeshbandara.com</span></li> -->
-              <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+94 710 655 341</span></li>
+              <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+94 741 325 674</span></li>
               <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Kandy, Sri Lanka</span></li>
             </ul>
           </div>
@@ -174,13 +165,8 @@
             </ul>
           </div>
         </div>
-        <p>
-          I can't say with 100% certainty where I see myself in five years or what my big career goals are.
-          The world is changing rapidly, and I don't have enough professional experience to be certain about such things.
-          However, I know that every project can offer a fresh and unusual approach. 
-          I am always open to challenges and constructive feedback.
-        </p>
-      </div>
+        <p>I may not know exactly where I’ll be in five years, but I’m excited to grow with every opportunity. The world is changing fast, and so am I—always open to new challenges, fresh ideas, and feedback that helps me improve.</p>
+        </div>
     </div>
 
   </div>
@@ -267,97 +253,98 @@
             <!-- <li data-filter="*" class="filter-active">All</li> -->
             <li data-filter=".filter-app" class="filter-active">Mobile Application</li>
             <li data-filter=".filter-web">Web Application</li>
-            <li data-filter=".filter-iot">UI/UX projects</li>
+            <!-- <li data-filter=".filter-iot">UI/UX projects</li> -->
             <li data-filter=".filter-system">Other</li>
           </ul><!-- End Portfolio Filters -->
 
           <div class="row g-0 portfolio-container">
 
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
+            <!-- <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
               <img src="assets/img/portfolio/app-5.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Real Estate Mobile App Code</h4>
                 <a href="assets/img/portfolio/app-5.png" title="Real Estate Mobile App Code" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="https://codecanyon.net/item/discover-the-power-of-flutter-for-your-real-estate-app/50434616" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
-            </div>
+            </div> -->
 
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
+            <!-- <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
               <img src="assets/img/portfolio/app-1.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Poet App</h4>
                 <a href="assets/img/portfolio/1.png" title="Poet App" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
-            </div>
+            </div> -->
             <!-- portfolio-details.html -->
             <!-- End Portfolio Item -->
 
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
+            <!-- <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
               <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Elder Exercises App</h4>
                 <a href="assets/img/portfolio/2.png" title="Elder Exercises App" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
-            </div>
+            </div> -->
             <!-- End Portfolio Item -->
 
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-system">
+            <!-- <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-system">
               <img src="assets/img/portfolio/webapp-1.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Onyxsio Grid View</h4>
                 <a href="assets/img/portfolio/webapp-1.png" title="Onyxsio Grid View" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="https://pub.dev/packages/onyxsio_grid_view" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
-            </div>
+            </div> -->
 
             
             <!-- End Portfolio Item -->
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-iot">
+            <!-- <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-iot">
               <img src="assets/img/portfolio/web-1.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Customer Relationship Management system</h4>
                 <a href="assets/img/portfolio/web-1.png" title="Customer Relationship Management system" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
-            </div>
+            </div> -->
             <!-- End Portfolio Item -->
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
+            <!-- <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
               <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Sudoku Game App</h4>
                 <a href="assets/img/portfolio/3.png" title="Sudoku Game App" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="https://play.google.com/store/apps/details?id=com.allstriking.sudoku" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
-            </div>
+            </div> -->
             <!-- End Portfolio Item -->
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
+            <!-- <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
               <img src="assets/img/portfolio/app-4.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Online Shopping App</h4>
                 <a href="assets/img/portfolio/app-4.jpg" title="Online Shopping App" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
-            </div>
+            </div> -->
             <!-- End Portfolio Item -->
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
+            <!-- <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
               <img src="assets/img/portfolio/app-2.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>රසවිඳ - Food Recipe</h4>
                 <a href="assets/img/portfolio/app-2.png" title="රසවිඳ - Food Recipe" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="https://play.google.com/store/apps/details?id=com.allstriking.recipe_app" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
-            </div>
+            </div> -->
             <!-- End Portfolio Item -->
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
+            <!-- <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
               <img src="assets/img/portfolio/app-3.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Water Reminder</h4>
                 <a href="assets/img/portfolio/app-3.png" title="Water Reminder" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="https://play.google.com/store/apps/details?id=com.allstriking.water_app" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
-            </div><!-- End Portfolio Item -->
+            </div>End Portfolio Item -->
+
           </div><!-- End Portfolio Container -->
 
         </div>
@@ -368,7 +355,7 @@
     
 
     <!-- ======= Recent Blog Posts Section ======= -->
-    <!-- <section id="recent-blog-posts" class="recent-blog-posts">
+   <!-- <section id="recent-blog-posts" class="recent-blog-posts">
 
       <div class="container" data-aos="fade-up">
 
@@ -422,7 +409,7 @@
 
       </div>
 
-    </section> -->
+    </section>  -->
     <!-- End Recent Blog Posts Section -->
 
     <!-- ======= Contact Section ======= -->
@@ -589,6 +576,9 @@
   <div id="fb-root"></div>
   <!-- Your Chat Plugin code -->
   <!-- <div id="fb-customer-chat" class="fb-customerchat"></div> -->
+
+  <!-- Add this before main.js -->
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

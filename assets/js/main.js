@@ -1,8 +1,6 @@
 /**
-* Template Name: HeroBiz - v2.3.1
-* Template URL: https://bootstrapmade.com/herobiz-bootstrap-business-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
+* Template Name: Sudesh Bandara - v2.3.1
+* Author: Sudesh Bandara
 */
 
 
@@ -177,44 +175,10 @@ document.addEventListener('DOMContentLoaded', () => {
     selector: '.glightbox'
   });
 
-  /**
-   * Porfolio isotope and filter
-   */
-  let portfolionIsotope = document.querySelector('.portfolio-isotope');
 
-  if (portfolionIsotope) {
+   initPortfolioSystem();
 
-    let portfolioFilter = portfolionIsotope.getAttribute('data-portfolio-filter') ? portfolionIsotope.getAttribute('data-portfolio-filter') : '.filter-app';
-    let portfolioLayout = portfolionIsotope.getAttribute('data-portfolio-layout') ? portfolionIsotope.getAttribute('data-portfolio-layout') : 'masonry';
-    let portfolioSort = portfolionIsotope.getAttribute('data-portfolio-sort') ? portfolionIsotope.getAttribute('data-portfolio-sort') : 'original-order';
-
-    window.addEventListener('load', () => {
-      let portfolioIsotope = new Isotope(document.querySelector('.portfolio-container'), {
-        itemSelector: '.portfolio-item',
-        layoutMode: portfolioLayout,
-        filter: portfolioFilter,
-        sortBy: portfolioSort
-      });
-
-      let menuFilters = document.querySelectorAll('.portfolio-isotope .portfolio-flters li');
-      menuFilters.forEach(function(el) {
-        el.addEventListener('click', function() {
-          document.querySelector('.portfolio-isotope .portfolio-flters .filter-active').classList.remove('filter-active');
-          this.classList.add('filter-active');
-          portfolioIsotope.arrange({
-            filter: this.getAttribute('data-filter')
-          });
-          if (typeof aos_init === 'function') {
-            aos_init();
-          }
-        }, false);
-      });
-
-    });
-
-  }
-
-  /**
+     /**
    * Clients Slider
    */
   new Swiper('.clients-slider', {
@@ -266,22 +230,22 @@ document.addEventListener('DOMContentLoaded', () => {
   /**
    * Testimonials Slider
    */
-  new Swiper('.portfolio-details-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
+  // new Swiper('.portfolio-details-slider', {
+  //   speed: 600,
+  //   loop: true,
+  //   autoplay: {
+  //     delay: 5000,
+  //     disableOnInteraction: false
+  //   },
+  //   slidesPerView: 'auto',
+  //   pagination: {
+  //     el: '.swiper-pagination',
+  //     type: 'bullets',
+  //     clickable: true
+  //   }
+  // });
 
-  /**
+    /**
    * Animation on scroll function and init
    */
   function aos_init() {
@@ -295,5 +259,111 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
     aos_init();
   });
-
 });
+
+
+// Inside DOMContentLoaded event
+const initPortfolioSystem = () => {
+  const firebaseConfig = {
+    apiKey: "AIzaSyC6An8cdWlV9-z67Degd--8-zDObWO6b74",
+    authDomain: "my-website-206d7.firebaseapp.com",
+    databaseURL: "https://my-website-206d7-default-rtdb.firebaseio.com",
+    projectId: "my-website-206d7",
+    storageBucket: "my-website-206d7.firebasestorage.app",
+    messagingSenderId: "876367222618",
+    appId: "1:876367222618:web:bb5859831bb7560e410563"
+  };
+  
+  // Initialize Firebase
+  const app = firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  let portfolioIsotopeInstance = null;
+  const portfolioContainer = document.querySelector('.portfolio-container');
+
+  const createPortfolioItem = (item) => {
+    const colDiv = document.createElement('div');
+    colDiv.className = `col-xl-2 col-lg-3 col-md-5 col-sm-6 portfolio-item ${item.category}`;
+    colDiv.innerHTML = `
+    
+      <div class="portfolio-item-inner">
+      <a href="portfolio-details.html?id=${item.id}">
+        <img src="${item.imageUrl}" class="img-fluid" alt="${item.title}">
+        <div class="portfolio-info">
+          <h4>Read more</h4>
+        </div>
+        </a>
+      </div>
+    `;
+    return colDiv;
+  };
+
+  const initIsotope = () => {
+    if (portfolioIsotopeInstance) {
+      portfolioIsotopeInstance.destroy();
+    }
+
+    portfolioIsotopeInstance = new Isotope(portfolioContainer, {
+      itemSelector: '.portfolio-item',
+      layoutMode: 'masonry',
+      masonry: {
+        columnWidth: '.portfolio-item',
+        gutter: 10
+      },
+      transitionDuration: '0.6s'
+    });
+
+    // Add filter click handlers
+    document.querySelectorAll('.portfolio-flters li').forEach(filter => {
+      filter.addEventListener('click', function() {
+        document.querySelector('.portfolio-flters .filter-active').classList.remove('filter-active');
+        this.classList.add('filter-active');
+        portfolioIsotopeInstance.arrange({
+          filter: this.dataset.filter
+        });
+        portfolioIsotopeInstance.layout();
+      });
+    });
+  };
+
+  const loadPortfolioItems = async () => {
+    try {
+      const snapshot = await db.collection("portfolioItems").get();
+      portfolioContainer.innerHTML = '';
+      
+      // Create all items first
+      snapshot.forEach(doc => {
+        const item = doc.data();
+        portfolioContainer.appendChild(createPortfolioItem(item));
+      });
+
+      // Wait for images and layout
+      imagesLoaded(portfolioContainer, () => {
+        initIsotope();
+        
+        // Double-check layout after short delay
+        setTimeout(() => {
+          portfolioIsotopeInstance.layout();
+          if (typeof AOS !== 'undefined') AOS.refresh();
+        }, 500);
+      });
+
+    } catch (error) {
+      console.error('Portfolio load error:', error);
+    }
+  };
+
+  // Initial load
+  loadPortfolioItems();
+
+  // Redraw on window resize
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (portfolioIsotopeInstance) {
+        portfolioIsotopeInstance.layout();
+      }
+    }, 250);
+  });
+};
